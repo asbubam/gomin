@@ -163,7 +163,7 @@ ul.problems {
 		border:1px solid #aaa;
 		position:relative;
 		&.long {
-			min-height:150px;
+			max-height:150px;
 		}
 		border-bottom:1px solid #aaa;
 		padding:10px;
