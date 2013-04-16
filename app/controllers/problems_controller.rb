@@ -5,7 +5,7 @@ class ProblemsController < ApplicationController
 
 		if @problem.save
 		else
-			flash[:notice] = "save task failed."
+			flash[:notice] = "save failed #{@problem.errors.full_messages}"
 		end
 
 		redirect_to root_path
