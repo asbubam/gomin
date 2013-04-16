@@ -153,17 +153,17 @@ body {
 }
 
 ul.problems {
-	border:1px solid #aaa;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	border-radius:10px;	
+//	-webkit-border-radius:10px;
+//	-moz-border-radius:10px;
+//	border-radius:10px;	
 	margin:20px 0 0 0;
 	padding:0;
 	list-style:none;
 	li.problem {
+		border:1px solid #aaa;
 		position:relative;
-		&.last {
-			border-bottom:0;
+		&.long {
+			min-height:150px;
 		}
 		border-bottom:1px solid #aaa;
 		padding:10px;
@@ -175,6 +175,26 @@ ul.problems {
 			position:absolute;
 			right:5px;
 			bottom:1px;
+			font-size:10px;
+		}
+	}
+	.actions {
+		margin-bottom:15px;
+		border-left:1px solid #aaa;
+		border-right:1px solid #aaa;
+		border-bottom:1px solid #aaa;
+		border-bottom:1px solid #aaa;
+		height:20px;
+		.action {
+			height:20px;
+			line-height:20px;
+			&.middle {
+				width:34%;
+			}
+			width:33%;
+			float:left;
+			text-align:center;
+			background:#eee;
 			font-size:10px;
 		}
 	}

@@ -13,8 +13,8 @@
 </div>
 
 <ul class="problems">
-	<% Problem.find(:all, :order => "id desc").each do |problem| %>
-		<li class="problem <%= 'last' if Problem.first == problem %>">
+	<% Problem.find(:all, :order => "id desc").each_with_index do |problem, i| %>
+		<li class="problem <%= 'long' if i < 3 %> <%= 'last' if Problem.first == problem %>">
 			<div class="content">
 				<%= truncate(problem.content, :length => 110) %>
 			</div>
@@ -22,5 +22,16 @@
 				<%= "#{time_ago_in_words(problem.created_at)} ago" %>
 			</div>
 		</li>
+		<div class="actions <%= 'last' if Problem.first == problem %>">
+			<div class="action">
+				<%= link_to "좋아요", "" %>
+			</div>
+			<div class="action middle">
+				<%= link_to "싫어요", "" %>
+			</div>
+			<div class="action">
+				<%= link_to "댓글달기", "" %>
+			</div>
+		</div>
 	<% end %>
 </ul>
