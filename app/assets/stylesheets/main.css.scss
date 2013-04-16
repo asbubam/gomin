@@ -15,8 +15,16 @@
   }
 }
 
-$full_width:1280px;
-$main_left_width:240px;
+.ellipsis {
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  -ms-text-overflow:ellipsis;
+  -moz-binding:url('/ellipsis.xml#ellipsis');
+  display:block;
+}
+
 $label_width:80px; 
 $text_field_width:120px;
 
@@ -34,20 +42,33 @@ a {
 	font-size:12px;
 }
 
+body {
+	margin:0;
+	padding:0;
+}
 #header {
-	max-width:$full_width;
+	font-family:Dotum;
+	.site_name {
+		text-align:center;
+		padding:12px 10px 8px;
+  	background:#3392ff;
+  	border:1px solid #2281ee;
+		font-size:20px;
+		font-weight:bold;		
+		a {
+			color:white;
+		}
+	}
 }
 
 #section {
-	max-width:$full_width;
-	margin:0 auto;
+	padding:10px;
 	font-family:Dotum;
 	font-size:12px;
 	color:#333;
 }
 
 #footer {
-	max-width:$full_width;
 	margin:0 auto 150px;
 	font-family:Dotum;
 	font-size:12px;
@@ -55,21 +76,29 @@ a {
   a#header_link {
     position:fixed;
     display:scroll;
-    bottom:0;
+    bottom:30px;
     right:0;
-    background:#fd9242;
+    //background:#fd9242;
+    //border:1px solid #ec8131;
     color:#000;
+  	background:#3392ff;
+  	border:1px solid #2281ee;
     font-weight:bold;
     font-size:12px;
-    padding:5px 15px;
+    padding:6px 15px;
     text-decoration:none;
-    border:1px solid #ec8131;
     opacity:0.7;
   }
 }
 
 .form_wrapper { 
+	.desc {
+		padding-left:10px;
+		font-weight:bold;
+	}
 	form {
+		margin:0;
+		padding:0;
 		@extend .clearfix;
 		.field { 
 			@extend .clearfix; 
@@ -100,6 +129,9 @@ a {
 				font-size:12px; 
 			} 
 			textarea {
+				font-size:13px;
+				margin:0;
+				padding:5px 2px;
 				border:1px solid #aaa;
 			}
 		} 
@@ -108,17 +140,42 @@ a {
 				float:left;
 			}
 			input {
+				width:100%;
+				height:30px;
+				padding:10px 5px;
 				border:1px solid #333;
 				background:#444;
 				color:white;
 				font-size:12px; 
-				&.left_float_submit {
-					float:left;
-					border:1px solid #333;
-					background:#444;
-					color:white;
-				}
 			} 
+		}
+	}
+}
+
+ul.problems {
+	border:1px solid #aaa;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;	
+	margin:20px 0 0 0;
+	padding:0;
+	list-style:none;
+	li.problem {
+		position:relative;
+		&.last {
+			border-bottom:0;
+		}
+		border-bottom:1px solid #aaa;
+		padding:10px;
+		min-height:40px;
+		max-height:120px;
+		font-size:13px;
+		color:#333;
+		.created_at {
+			position:absolute;
+			right:5px;
+			bottom:1px;
+			font-size:10px;
 		}
 	}
 }

@@ -1,1 +1,26 @@
-main
+<div class="form_wrapper">
+	<div class="desc">
+		지금 당신의 고민을 등록하세요.
+	</div>
+	<%= form_for Problem.new do |f| %>
+		<div class="field">
+			<%= f.text_area :content, :class => "text", :rows => 5 ,:autofocus => :true %>
+		</div>
+		<div class="actions">
+			<%= f.submit("고민등록") %>
+		</div>
+	<% end %>
+</div>
+
+<ul class="problems">
+	<% Problem.find(:all, :order => "id desc").each do |problem| %>
+		<li class="problem <%= 'last' if Problem.first == problem %>">
+			<div class="content">
+				<%= truncate(problem.content, :length => 110) %>
+			</div>
+			<div class="created_at">
+				<%= "#{time_ago_in_words(problem.created_at)} ago" %>
+			</div>
+		</li>
+	<% end %>
+</ul>
