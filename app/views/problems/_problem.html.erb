@@ -8,10 +8,10 @@
 <% end %>
 <div class="actions <%= 'last' if Problem.first == problem %>">
 	<div class="action blue">
-		<%= link_to "고민이에요 #{problem.like unless problem.like.zero?}", like_problem_path(problem), :method => :post, :remote => true %>
+		<%= link_to "고민이다. #{problem.like unless problem.like.zero?}", like_problem_path(problem), :method => :post, :remote => true %>
 	</div>
 	<div class="action middle red">
-		<%= link_to "고민아니에요 #{problem.dislike unless problem.dislike.zero?}", dislike_problem_path(problem), :method => :post, :remote => true %>
+		<%= link_to "고민아니다. #{problem.dislike unless problem.dislike.zero?}", dislike_problem_path(problem), :method => :post, :remote => true %>
 	</div>
 	<div class="action">
 		<%= link_to "댓글달기", "" %>

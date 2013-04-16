@@ -14,7 +14,7 @@
 
 <ul class="problems best">
 	<div class="desc blue">
-		고민이에요 BEST
+		고민이다. BEST
 	</div>
 	<% collection = Problem.find(:all, :order => "like desc", :limit => 3) %>
 	<%= render :partial => '/problems/problem', :collection => collection %>
@@ -22,7 +22,7 @@
 
 <ul class="problems best">
 	<div class="desc red">
-		고민아니에요 BEST
+		고민아니다.  BEST
 	</div>
 	<% collection = Problem.find(:all, :order => "dislike desc", :limit => 3) %>
 	<%= render :partial => '/problems/problem', :collection => collection %>
