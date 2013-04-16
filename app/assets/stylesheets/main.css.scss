@@ -5,7 +5,7 @@
 .clearfix {
   zoom:1;
   &:before, &:after {
-    content:"\0020";
+   	content:"\0020";
     display:block;
     height:0;
     overflow:hidden;
@@ -156,9 +156,18 @@ ul.problems {
 //	-webkit-border-radius:10px;
 //	-moz-border-radius:10px;
 //	border-radius:10px;	
-	margin:20px 0 0 0;
+	margin:20px 0;
 	padding:0;
 	list-style:none;
+	.desc {
+		font-weight:bold;
+		&.blue {
+			color:#3392ff;
+		}
+		&.red {
+			color:#ff3392;
+		}
+	}
 	li.problem {
 		border:1px solid #aaa;
 		position:relative;
@@ -171,6 +180,9 @@ ul.problems {
 		max-height:120px;
 		font-size:13px;
 		color:#333;
+		.content {
+			padding-bottom:10px;
+		}
 		.created_at {
 			position:absolute;
 			right:5px;
@@ -179,13 +191,23 @@ ul.problems {
 		}
 	}
 	.actions {
-		margin-bottom:15px;
+		margin-bottom:10px;
 		border-left:1px solid #aaa;
 		border-right:1px solid #aaa;
 		border-bottom:1px solid #aaa;
 		border-bottom:1px solid #aaa;
 		height:20px;
 		.action {
+			&.blue {
+				a {
+					color:#3392ff;
+				}		
+			}
+			&.red {
+				a {
+					color:#ff3392;
+				}
+			}
 			height:20px;
 			line-height:20px;
 			&.middle {
