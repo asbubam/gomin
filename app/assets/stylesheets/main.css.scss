@@ -169,55 +169,51 @@ ul.problems {
 		}
 	}
 	li.problem {
+		margin-bottom:10px;
 		border:1px solid #aaa;
 		position:relative;
 		&.long {
 			max-height:150px;
 		}
 		border-bottom:1px solid #aaa;
-		padding:10px;
 		min-height:40px;
 		max-height:120px;
 		font-size:13px;
 		color:#333;
 		.content {
+			padding:10px 10px 0 10px;
 			padding-bottom:10px;
 		}
 		.created_at {
 			position:absolute;
 			right:5px;
 			bottom:1px;
-			font-size:10px;
+			font-size:11px;
 		}
-	}
-	.actions {
-		margin-bottom:10px;
-		border-left:1px solid #aaa;
-		border-right:1px solid #aaa;
-		border-bottom:1px solid #aaa;
-		border-bottom:1px solid #aaa;
-		height:20px;
-		.action {
-			&.blue {
-				a {
-					color:#3392ff;
-				}		
-			}
-			&.red {
-				a {
-					color:#ff3392;
-				}
-			}
+		.actions {
 			height:20px;
-			line-height:20px;
-			&.middle {
-				width:34%;
+			.action {
+				&.blue {
+					a {
+						color:#3392ff;
+					}		
+				}
+				&.red {
+					a {
+						color:#ff3392;
+					}
+				}
+				height:20px;
+				line-height:20px;
+				&.middle {
+					width:34%;
+				}
+				width:33%;
+				float:left;
+				text-align:center;
+				background:#eee;
+				font-size:11px;
 			}
-			width:33%;
-			float:left;
-			text-align:center;
-			background:#eee;
-			font-size:10px;
 		}
 	}
 }

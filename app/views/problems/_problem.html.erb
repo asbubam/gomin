@@ -1,19 +1,20 @@
 <%= content_tag_for :li, problem do %>
 	<div class="content">
-		<%= truncate(problem.content, :length => 110) %>
+		<%= truncate(problem.content.html_safe, :length => 110) %>
 	</div>
 	<div class="created_at">
 		<%= "#{time_ago_in_words(problem.created_at)} ago" %>
 	</div>
+	<div class="actions <%= 'last' if Problem.first == problem %>">
+		<div class="action blue">
+			<%= link_to "고민이다. #{problem.like unless problem.like.zero?}", like_problem_path(problem), :method => :post, :remote => true %>
+		</div>
+		<div class="action middle red">
+			<%= link_to "고민아니다. #{problem.dislike unless problem.dislike.zero?}", dislike_problem_path(problem), :method => :post, :remote => true %>
+		</div>
+		<div class="action">
+			<%= link_to "댓글달기", "" %>
+		</div>
+	</div>
 <% end %>
-<div class="actions <%= 'last' if Problem.first == problem %>">
-	<div class="action blue">
-		<%= link_to "고민이다. #{problem.like unless problem.like.zero?}", like_problem_path(problem), :method => :post, :remote => true %>
-	</div>
-	<div class="action middle red">
-		<%= link_to "고민아니다. #{problem.dislike unless problem.dislike.zero?}", dislike_problem_path(problem), :method => :post, :remote => true %>
-	</div>
-	<div class="action">
-		<%= link_to "댓글달기", "" %>
-	</div>
-</div>
+

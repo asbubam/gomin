@@ -14,19 +14,15 @@ class ProblemsController < ApplicationController
 	def like 
 		@problem = Problem.find(params[:id]) 
 		@problem.increment!(:like)
-
-		render :update do |page|
-			page.replace dom_id(@problem), :partial => 'problem', :locals => { :problem => @problem }
-		end
 	end 
 
 	def dislike
 		@problem = Problem.find(params[:id]) 
 		@problem.increment!(:dislike)
 
-		render :update do |page|
-			page.replace dom_id(@problem), :partial => 'problem', :locals => { :problem => @problem }
-		end
+#		render :update do |page|
+#			page.replace dom_id(@problem), :partial => 'problem', :locals => { :problem => @problem }
+#		end
 	end 
 
 end

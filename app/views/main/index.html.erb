@@ -22,7 +22,7 @@
 
 <ul class="problems best">
 	<div class="desc red">
-		고민아니다.  BEST
+		고민아니다. BEST
 	</div>
 	<% collection = Problem.find(:all, :order => "dislike desc", :limit => 3) %>
 	<%= render :partial => '/problems/problem', :collection => collection %>
